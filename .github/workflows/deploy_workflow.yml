@@ -65,7 +65,7 @@ jobs:
             .
 
       - name: Push image
-        run: docker push $IMAGE_URL
+        run: docker push $BACKEND_IMAGE_URL
 
       - name: Deploy to Cloud Run
         run: |
@@ -123,7 +123,7 @@ jobs:
       - name: Deploy to Cloud Run
         run: |
           gcloud run deploy ${{ vars.FRONTEND_SERVICE_NAME }} \
-            --image $FRONTEND_ IMAGE_URL \
+            --image $FRONTEND_IMAGE_URL \
             --platform managed \
             --region ${{ vars.REGION }} \
             --allow-unauthenticated \
