@@ -57,7 +57,7 @@ jobs:
 
       - name: Build image
         run: |
-          docker build \
+            docker build \
             --no-cache \
             --platform linux/amd64 \
             -t $IMAGE_URL \
